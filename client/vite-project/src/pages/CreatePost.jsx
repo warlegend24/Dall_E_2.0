@@ -27,7 +27,7 @@ const CreatePost = () => {
         //then we set the generating image state variable to true indicating that we are currently fetching the image from openai server through our server using a openAIApi key
         setGeneratingImage(true);
         //we use the fetch hook to make a post request to the server at the url/route specified as a parameter and options{}as second parameter
-        const response = await fetch('http://localhost:8080/api/v1/dalle',{
+        const response = await fetch('https://dall-e-2-0-l1dr.onrender.com/api/v1/dalle',{
           method:'POST',
           // the header interface/property helps the server understand which type of request it is dealing with
           headers:{'Content-Type':'application/json'},
@@ -69,7 +69,7 @@ const CreatePost = () => {
         //route where it gets catched by the router.route("/").post(async(req,res)=>{..}) and it uploads it on the cloudinary cloud db and finally save it on our database by creating and saving a new post corresponding to the form data and image url recieved from the cloudinary
         
         //storing the response in a const:-
-        const response = await fetch("http://localhost:8080/api/v1/post",{
+        const response = await fetch("https://dall-e-2-0-l1dr.onrender.com/api/v1/post",{
         method:"POST",
         headers:{
           'Content-Type':'application/json'
