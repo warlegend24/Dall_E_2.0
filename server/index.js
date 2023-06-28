@@ -24,6 +24,9 @@ app.use("/api/v1/post",postRoutes);
 app.use("/api/v1/dalle",dalleRoutes);
 
 
+app.get("/",function(req,res){
+    res.send("<h1>Hello From DALL-E 2.0 !!</h1>");
+});
 
 const startServer = ()=>{
     try {
